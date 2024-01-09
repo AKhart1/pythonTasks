@@ -1,5 +1,6 @@
 import string
 import random
+
 def passwordGenerator(length):
     letters = string.ascii_letters
     digits = string.digits
