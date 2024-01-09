@@ -6,11 +6,11 @@ This repository contains basic and advanced level Python tasks completed during 
 
 This repository serves as a collection of Python exercises completed as part of the Codecool course curriculum. The tasks are categorized based on their difficulty level and cover a wide range of topics in Python programming.
 
-## Structure
+## Folder Structure
 
-The repository is organized into files based on the task categories or difficulty levels. Here is an overview of the file structure:
+The repository is organized into folders based on the task categories or difficulty levels. Here is an overview of the file structure:
 
-- # `Task-Basic.py`: Contains Python tasks focusing on foundational concepts.
+- ### `BasicTasks` folder : Contains Python tasks focusing on foundational concepts.
   
 1. **String Reverser**:
    - Write a program that takes a string as input and returns it reversed.
@@ -42,7 +42,7 @@ The repository is organized into files based on the task categories or difficult
 10. **Currency Converter**:
      - Using a third-party library like `forex-python`, create a program that can convert one currency to another based on current exchange rates.
      
-- # `Task-Advanced.py`: Contains more complex Python exercises covering advanced topics.
+- ### `AdvancedTasks` folder: Contains more complex Python exercises covering advanced topics.
 
 1. **Palindrome Checker**:
    - Write a program that checks if a given word or phrase is a palindrome (reads the same backward as forward, ignoring spaces, punctuation, and capitalization).
