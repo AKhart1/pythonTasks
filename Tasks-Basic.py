@@ -40,8 +40,8 @@ def simpleCalculator():
     action = input("Enter the action to perform (add,sub,mul,div): ")
 
     numbers = numbers.split(' ')
-    x = int(numbers[0])
-    y = int(numbers[1])
+    x = float(numbers[0])
+    y = float(numbers[1])
 
     match action:
         case 'add':
@@ -55,7 +55,7 @@ def simpleCalculator():
                 return "Cannot divide by zero"
             return x / y
 
-# print(simpleCalculator())
+print(simpleCalculator())
 
 def wordCounter():
     user_input = input("Enter the sentence: ")

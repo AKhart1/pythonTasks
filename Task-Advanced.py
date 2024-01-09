@@ -1,6 +1,8 @@
 import datetime
 import os
 import requests
+from bs4 import BeautifulSoup
+from nltk.corpus import wordnet
 
 def palindromeCheker():
     string = input("Enter a string : ")
@@ -43,7 +45,6 @@ def logBook():
                 print(line.strip())
 
 # LogBook()
-
 
 def toDoListApp():
     tasks = []
@@ -94,5 +95,46 @@ def weatherCheker(city):
     else:
         print(f'Failed to fetch weather inforamtion. {response}')
 
-city = 'Warsaw'
-weatherCheker(city)
+# city = 'Warsaw'
+# weatherCheker(city)
+
+def webScraper(site):
+    try:
+        response = requests.get(site)
+        soup = BeautifulSoup(response.content, 'html.parser')
+        print(f'Headlines from website:')
+        headlines = soup.find_all('h2')
+
+        for headline in headlines:
+            print(headline.text.strip())
+
+    except Exception as ex:
+        print(f"An error occured: {ex}")
+
+# webScraper('https://www.bbc.com/news')
+
+def dict_and_thesaurus(word):
+    try:
+        synsets = wordnet.synsets(word)
+
+        if synsets:
+            print(f'Definition of word {word} : ')
+            for value in synsets:
+                print(f'- {value.definition()}')
+
+            synonyms = set()
+            for value in synsets:
+                for lemma in value.lemmas():
+                    synonyms.add(lemma.name())
+
+            if synonyms:
+                print(f'\nSynonyms of {word}: {synonyms}')
+            else:
+                print(f'\nNo synonyms found for "{word}"')
+        else:
+            print(f'No definitions found for "{word}"')
+
+    except Exception as ex:
+        print(f"An error occured: {ex}")
+
+# dict_and_thesaurus(input('Enter a word: '))
